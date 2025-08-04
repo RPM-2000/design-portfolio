@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Order a Logo - DesignByYou</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      padding: 40px 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, textarea {
+      padding: 12px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      resize: vertical;
+    }
+
+    button {
+      padding: 14px;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #444;
+    }
+
+    .back {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .back a {
+      text-decoration: none;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>Order a Custom Logo</h1>
+
+  <form action="https://formsubmit.io/send/https://formspree.io/f/manbdgdo" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="description" rows="5" placeholder="Describe the logo you want (style, colors, purpose...)" required></textarea>
+
+    <!-- Proteção opcional contra spam -->
+    <input name="_formsubmit_id" type="text" style="display:none">
+    
+    <!-- Redirecionamento após envio -->
+    <input type="hidden" name="_redirect" value="https://teunome.github.io/nomedorepo/thanks.html">
+
+    <button type="submit">Send Request</button>
+  </form>
+
+  <div class="back">
+    <a href="index.html">← Back to Home</a>
+  </div>
+</body>
+</html>
