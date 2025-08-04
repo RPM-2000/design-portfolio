@@ -18,7 +18,7 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 120px;
+      height: 170px; /* Altura do cabeçalho ajustada para acomodar o logo maior */
       background-color: #fff;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       display: flex;
@@ -29,11 +29,24 @@
       position: relative;
     }
 
+    /* Adição para limitar a área clicável do link do logo */
+    header a {
+      display: flex; /* Faz com que o link se ajuste ao conteúdo */
+      padding: 0; /* Remove qualquer preenchimento extra que o navegador possa adicionar */
+      /* Opcional: Centra o logo dentro da área do link, se necessário */
+      align-items: center;
+      justify-content: center;
+      /* Define a altura do link para ser a mesma da imagem */
+      height: 150px; /* Igual à altura da imagem do logo */
+      width: auto; /* Para que a largura se ajuste */
+    }
+
     header img {
-      height: 150px; /* <--- AQUI: O logo foi aumentado para 120px */
+      height: 150px; /* Logo aumentado para 150px */
       width: auto;
       cursor: pointer;
       transition: transform 0.3s ease;
+      display: block; /* Garante que a imagem não tenha espaços extras */
     }
 
     header img:hover {
@@ -52,7 +65,7 @@
     }
 
     main {
-      margin-top: 140px; /* espaço para o header fixo */
+      margin-top: 190px; /* Espaço para o header fixo, ajustado para a nova altura do header + 20px */
       padding: 20px 40px;
       text-align: center;
     }
@@ -110,9 +123,6 @@
 
     <a class="back-button" href="index.html">← Back to Home</a>
   </main>
-
-</body>
-</html>
 
 </body>
 </html>
