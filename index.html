@@ -4,11 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DesignByYou</title>
+
+  <!-- Fonte moderna Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f6f6f6;
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffffff;
       color: #333;
       display: flex;
       flex-direction: column;
@@ -17,17 +21,21 @@
       padding: 20px;
     }
 
-    header {
-      margin-top: 20px;
-      margin-bottom: 20px;
+    .hero {
+      width: 100%;
+      height: 300px;
+      background: url('hero-image.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 30px;
     }
 
-    header img {
+    .hero img {
       width: 500px;
       max-width: 90vw;
       height: auto;
-      display: block;
-      margin: 0 auto;
+      filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.3));
     }
 
     p {
@@ -66,9 +74,10 @@
 </head>
 <body>
 
-  <header>
-    <img src="logo-for-designbyyou.png" alt="Logo">
-  </header>
+  <!-- Hero com imagem de fundo -->
+  <div class="hero">
+    <img src="logo-for-designbyyou.png" alt="DesignByYou Logo">
+  </div>
 
   <p>
     Welcome to my creative portfolio! I design unique logos and clothing illustrations tailored to your style and brand.
