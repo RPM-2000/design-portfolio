@@ -8,7 +8,6 @@
   <style>
     body {
       margin: 0;
-      /* Aplica a nova fonte Poppins */
       font-family: 'Poppins', sans-serif;
       background-color: #fff;
       color: #333;
@@ -20,18 +19,17 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 120px; /* Header permanece com 120px de altura */
+      height: 120px;
       background-color: #fff;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       display: flex;
-      align-items: center; /* Alinha verticalmente os itens no centro do header */
+      align-items: center;
       padding: 0 40px;
       gap: 30px;
       z-index: 1000;
       position: relative;
     }
 
-    /* Limita a área clicável do link do logo e ajusta a sua altura */
     header a {
       display: flex;
       padding: 0;
@@ -41,8 +39,8 @@
     }
 
     header img {
-      height: 140px; /* Logo definido para 140px de altura - vai transbordar o header */
-      width: auto; /* Mantém a proporção do logo */
+      height: 140px; /* Logo definido para 140px de altura */
+      width: auto;
       cursor: pointer;
       transition: transform 0.3s ease;
       display: block;
@@ -53,7 +51,7 @@
     }
 
     header h1 {
-      font-size: 1.8rem; /* <--- AQUI: O tamanho do texto "My Portfolio" foi ajustado */
+      font-size: 1.8rem;
       margin: 0;
       font-weight: 700;
       user-select: none;
@@ -64,7 +62,7 @@
     }
 
     main {
-      margin-top: 140px; /* Mantém a margem do main com base na altura do header (120px + 20px) */
+      margin-top: 140px;
       padding: 20px 40px;
       text-align: center;
     }
@@ -81,11 +79,48 @@
       height: 200px;
       background-color: #eee;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       color: #aaa;
       font-style: italic;
       border: 1px dashed #ccc;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .placeholder img:hover {
+      transform: scale(1.05);
+    }
+
+    .placeholder p {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      padding: 10px 0;
+      margin: 0;
+      font-size: 0.9em;
+      text-align: center;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .placeholder:hover p {
+      transform: translateY(0);
     }
 
     .back-button {
@@ -114,10 +149,26 @@
 
   <main>
     <div class="gallery">
-      <div class="placeholder">Logo 1</div>
-      <div class="placeholder">Logo 2</div>
-      <div class="placeholder">T-shirt Design</div>
-      <div class="placeholder">Coming Soon</div>
+      <div class="placeholder">
+        <img src="logo1.jpeg" alt="Logotipo Minimalista 1">
+        <p>Logotipo Moderno e Limpo</p>
+      </div>
+      <div class="placeholder">
+        <img src="logo2.jpeg" alt="Logotipo Abstrato 2">
+        <p>Logotipo Geométrico Criativo</p>
+      </div>
+      <div class="placeholder">
+        <img src="filipabee.jpeg" alt="Design para Filipabee">
+        <p>Projeto Gráfico Filipabee</p>
+      </div>
+      <div class="placeholder">
+        <img src="mockup.jpeg" alt="Mockup de Produto Digital">
+        <p>Mockup de Aplicação Móvel</p>
+      </div>
+      <div class="placeholder">
+        <img src="mockup2.jpeg" alt="Mockup de Website Responsivo">
+        <p>Mockup de Website Profissional</p>
+      </div>
     </div>
 
     <a class="back-button" href="index.html">← Back to Home</a>
