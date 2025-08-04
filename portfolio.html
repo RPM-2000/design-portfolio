@@ -104,7 +104,8 @@
       transform: scale(1.05);
     }
 
-    /* Estilo para a legenda que aparece no hover (opcional) */
+    /* O estilo para a legenda (o parágrafo <p>) já não é necessário, mas mantê-lo não causará problemas */
+    /* se não houver tags <p> dentro dos .placeholder para o afetar. */
     .placeholder p {
       position: absolute;
       bottom: 0;
@@ -216,24 +217,19 @@
     <div class="gallery">
       <div class="placeholder">
         <img class="gallery-item" src="logo1.jpeg" data-fullsrc="logo1.jpeg" alt="Logotipo Minimalista 1">
-        <p>Logotipo Moderno e Limpo</p>
-      </div>
+        </div>
       <div class="placeholder">
         <img class="gallery-item" src="logo2.jpeg" data-fullsrc="logo2.jpeg" alt="Logotipo Abstrato 2">
-        <p>Logotipo Geométrico Criativo</p>
-      </div>
+        </div>
       <div class="placeholder">
         <img class="gallery-item" src="filipabee.jpeg" data-fullsrc="filipabee.jpeg" alt="Design para Filipabee">
-        <p>Projeto Gráfico Filipabee</p>
-      </div>
+        </div>
       <div class="placeholder">
         <img class="gallery-item" src="mockup.jpeg" data-fullsrc="mockup.jpeg" alt="Mockup de Produto Digital">
-        <p>Mockup de Aplicação Móvel</p>
-      </div>
+        </div>
       <div class="placeholder">
         <img class="gallery-item" src="mockup2.jpeg" data-fullsrc="mockup2.jpeg" alt="Mockup de Website Responsivo">
-        <p>Mockup de Website Profissional</p>
-      </div>
+        </div>
     </div>
 
     <a class="back-button" href="index.html">← Back to Home</a>
