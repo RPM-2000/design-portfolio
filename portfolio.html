@@ -10,14 +10,46 @@
       font-family: 'Segoe UI', sans-serif;
       background-color: #ffffff;
       color: #333;
-      padding: 30px 20px;
-      padding-top: 190px; /* espaço para o logo maior */
+      padding: 20px;
       text-align: center;
     }
 
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 20px;
+    header {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      padding: 20px 40px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+
+    .logo-small {
+      width: 180px; /* maior ainda */
+      height: auto;
+      filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2));
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .logo-small:hover {
+      transform: scale(1.05);
+    }
+
+    header h1 {
+      flex-grow: 1;
+      font-size: 2.5rem;
+      margin: 0;
+      text-align: center;
+      user-select: none;
+    }
+
+    .content {
+      margin-top: 120px; /* espaço para o header fixo */
     }
 
     .gallery {
@@ -54,45 +86,27 @@
       background-color: #444;
     }
 
-    /* Logo fixo no canto superior esquerdo */
-    .logo-link {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      z-index: 1000;
-      display: block;
-    }
-
-    .logo-small {
-      width: 150px;
-      height: auto;
-      filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2));
-      cursor: pointer;
-      transition: transform 0.3s ease;
-      margin: 0;
-    }
-
-    .logo-small:hover {
-      transform: scale(1.05);
-    }
   </style>
 </head>
 <body>
 
-  <!-- Logo fixo no topo esquerdo -->
-  <a href="index.html" class="logo-link">
-    <img src="logo-for-designbyyou.png" alt="DesignByYou Logo" class="logo-small">
-  </a>
+  <header>
+    <a href="index.html">
+      <img src="logo-for-designbyyou.png" alt="DesignByYou Logo" class="logo-small">
+    </a>
+    <h1>My Portfolio</h1>
+  </header>
 
-  <h1>My Portfolio</h1>
+  <div class="content">
+    <div class="gallery">
+      <div class="placeholder">Logo 1</div>
+      <div class="placeholder">Logo 2</div>
+      <div class="placeholder">T-shirt Design</div>
+      <div class="placeholder">Coming Soon</div>
+    </div>
 
-  <div class="gallery">
-    <div class="placeholder">Logo 1</div>
-    <div class="placeholder">Logo 2</div>
-    <div class="placeholder">T-shirt Design</div>
-    <div class="placeholder">Coming Soon</div>
+    <a class="back-button" href="index.html">← Back to Home</a>
   </div>
 
-  <a class="back-button" href="index.html">← Back to Home</a>
 </body>
 </html>
