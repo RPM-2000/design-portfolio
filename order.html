@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Order a Logo - DesignByYou</title>
   <style>
     body {
@@ -63,16 +63,10 @@
 <body>
   <h1>Order a Custom Logo</h1>
 
-  <form action="https://formspree.io/f/manbdgdo" method="POST">
+  <form id="logoForm">
     <input type="text" name="name" placeholder="Your Name" required />
     <input type="email" name="email" placeholder="Your Email" required />
     <textarea name="description" rows="5" placeholder="Describe the logo you want (style, colors, purpose...)" required></textarea>
-
-    <!-- Proteção opcional contra spam -->
-    <input name="_formsubmit_id" type="text" style="display:none">
-    
-    <!-- Redirecionamento após envio -->
-    <input type="hidden" name="_redirect" value="https://rpm-2000.github.io/design-portfolio/thanks.html">
 
     <button type="submit">Send Request</button>
   </form>
@@ -80,5 +74,27 @@
   <div class="back">
     <a href="index.html">← Back to Home</a>
   </div>
+
+  <script>
+    const form = document.getElementById("logoForm");
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      const data = new FormData(form);
+
+      fetch("https://formspree.io/f/manbdgdo", {
+        method: "POST",
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          window.location.href = "https://rpm-2000.github.io/design-portfolio/thanks.html";
+        } else {
+          alert("There was an error submitting the form. Please try again.");
+        }
+      }).catch(() => {
+        alert("There was a connection problem.");
+      });
+    });
+  </script>
 </body>
 </html>
