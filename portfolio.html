@@ -4,10 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portfolio - DesignByYou</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
+      /* Aplica a nova fonte Poppins */
+      font-family: 'Poppins', sans-serif; 
       background-color: #fff;
       color: #333;
       padding: 0;
@@ -18,7 +20,7 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 120px; /* Header voltou para a altura original de 120px */
+      height: 120px; /* Header permanece com 120px de altura */
       background-color: #fff;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       display: flex;
@@ -35,12 +37,11 @@
       padding: 0;
       align-items: center;
       justify-content: center;
-      height: 100%; /* Link ocupa 100% da altura do header */
       width: auto;
     }
 
     header img {
-      height: 100%; /* Logo ocupa 100% da altura do link, que por sua vez ocupa 100% da altura do header */
+      height: 140px; /* Logo definido para 140px de altura - vai transbordar o header */
       width: auto; /* Mantém a proporção do logo */
       cursor: pointer;
       transition: transform 0.3s ease;
@@ -63,7 +64,7 @@
     }
 
     main {
-      margin-top: 140px; /* Voltou para o original, pois o header é 120px + 20px de margem */
+      margin-top: 140px; /* Mantém a margem do main com base na altura do header (120px + 20px) */
       padding: 20px 40px;
       text-align: center;
     }
