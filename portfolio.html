@@ -52,9 +52,36 @@
     .back-button:hover {
       background-color: #444;
     }
+
+    /* Logo fixo no canto superior esquerdo */
+    .logo-link {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1000;
+      display: block;
+    }
+
+    .logo-small {
+      width: 80px;
+      height: auto;
+      filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2));
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .logo-small:hover {
+      transform: scale(1.1);
+    }
   </style>
 </head>
 <body>
+
+  <!-- Logo fixo no topo esquerdo -->
+  <a href="index.html" class="logo-link">
+    <img src="logo-for-designbyyou.png" alt="DesignByYou Logo" class="logo-small">
+  </a>
+
   <h1>My Portfolio</h1>
 
   <div class="gallery">
