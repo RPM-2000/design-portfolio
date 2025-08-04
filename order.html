@@ -68,7 +68,7 @@
     <input type="email" name="email" placeholder="Your Email" required />
     <textarea name="description" rows="5" placeholder="Describe the logo you want (style, colors, purpose...)" required></textarea>
 
-    <button type="submit">Send Request</button>
+    <button id="submitBtn" type="button">Send Request</button>
   </form>
 
   <div class="back">
@@ -76,24 +76,27 @@
   </div>
 
   <script>
-    const form = document.getElementById("logoForm");
-    form.addEventListener("submit", function(e) {
-      e.preventDefault();
+    document.getElementById("submitBtn").addEventListener("click", function () {
+      const form = document.getElementById("logoForm");
       const data = new FormData(form);
 
       fetch("https://formspree.io/f/manbdgdo", {
         method: "POST",
         body: data,
-        headers: { 'Accept': 'application/json' }
-      }).then(response => {
-        if (response.ok) {
-          window.location.href = "https://rpm-2000.github.io/design-portfolio/thanks.html";
-        } else {
-          alert("There was an error submitting the form. Please try again.");
+        headers: {
+          'Accept': 'application/json'
         }
-      }).catch(() => {
-        alert("There was a connection problem.");
-      });
+      })
+        .then(response => {
+          if (response.ok) {
+            window.location.href = "https://rpm-2000.github.io/design-portfolio/thanks.html";
+          } else {
+            alert("There was an error submitting the form.");
+          }
+        })
+        .catch(() => {
+          alert("There was a connection problem.");
+        });
     });
   </script>
 </body>
