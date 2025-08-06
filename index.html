@@ -26,8 +26,9 @@
       justify-content: space-between;
       align-items: center;
       padding: 20px 40px;
-      /* Fundo totalmente transparente */
-      background-color: transparent; 
+      /* Fundo branco semi-transparente para as letras pretas */
+      background-color: rgba(255, 255, 255, 0.8); 
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Sombra para profundidade */
       position: fixed;
       top: 0;
       left: 0;
@@ -39,8 +40,7 @@
     .logo {
       height: 140px;
       width: auto;
-      /* Sombra no logo para se destacar do fundo */
-      filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+      /* Removemos a sombra do logo, que já não é necessária */
     }
 
     .nav-links {
@@ -50,15 +50,16 @@
 
     .nav-links a {
       text-decoration: none;
-      color: #fff; /* Cor do texto branca */
+      /* Cor das letras agora é preta */
+      color: #000; 
       font-weight: 500;
       transition: color 0.3s;
-      /* Sombra no texto para se destacar do fundo */
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+      /* Removemos a text-shadow, que já não é necessária */
     }
 
     .nav-links a:hover {
-      color: #ccc; 
+      /* Cor de hover, um cinzento escuro */
+      color: #555; 
     }
 
     /* Hero Section */
