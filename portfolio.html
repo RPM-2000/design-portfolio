@@ -14,76 +14,84 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #ffffff; /* Fundo branco para a galeria */
+      background-color: #ffffff;
       color: #333;
-      padding: 0;
-      position: relative; /* Necessário para posicionar o título por cima */
     }
 
-    /* Navbar - agora com a barra de navegação */
     nav {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
       height: 120px;
-      background-color: transparent; /* Fundo totalmente transparente */
+      background-color: transparent;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 20px 40px;
       z-index: 1000;
     }
-    
+
     .logo {
       height: 140px;
       width: auto;
-      filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2)); /* Sombra para o logo se destacar */
+      filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
       transition: transform 0.3s ease;
     }
 
     .logo:hover {
       transform: scale(1.05);
     }
-    
+
     .nav-links {
       display: flex;
       gap: 30px;
     }
-    
+
     .nav-links a {
       text-decoration: none;
       color: #000;
       font-weight: 500;
       transition: all 0.3s ease-in-out;
-      text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
-    }
-    
-    .nav-links a:hover {
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
-                   0 0 20px rgba(255, 255, 255, 0.8),
-                   0 0 30px rgba(255, 255, 255, 0.8);
-      transform: scale(1.1);
-      color: #000;
+      position: relative;
     }
 
-    /* Título da página */
-    .page-title {
-      position: absolute; /* Posição absoluta para o título ficar por cima do conteúdo */
-      top: 120px; /* Abaixo do nav */
+    .nav-links a::after {
+      content: '';
+      position: absolute;
       left: 0;
-      right: 0;
-      text-align: center;
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: #333;
-      z-index: 999; /* Fica por baixo do nav, mas por cima do main */
-      padding: 20px 0;
+      bottom: -5px;
+      width: 100%;
+      height: 2px;
+      background: #000;
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+      transform-origin: left;
     }
-    
+
+    .nav-links a:hover::after {
+      transform: scaleX(1);
+    }
+
+    .nav-links a:hover {
+      color: #000;
+      text-shadow:
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 15px #aaa;
+      transform: scale(1.05);
+    }
+
+    .page-title {
+      margin-top: 140px;
+      font-size: 3rem;
+      font-weight: 700;
+      text-align: center;
+      color: #333;
+    }
+
     main {
-      margin-top: 200px; /* Aumentamos o margin para dar espaço ao nav e ao título */
-      padding: 20px 40px;
+      padding: 40px;
       text-align: center;
     }
 
@@ -102,13 +110,11 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      color: #aaa;
-      font-style: italic;
       border: 1px dashed #ccc;
+      border-radius: 8px;
       overflow: hidden;
       position: relative;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      border-radius: 8px;
       cursor: pointer;
     }
 
@@ -156,7 +162,6 @@
       background-color: #444;
     }
 
-    /* --- Estilos para o Modal (Lightbox) --- */
     .modal {
       display: none;
       position: fixed;
@@ -169,7 +174,6 @@
       background-color: rgba(0, 0, 0, 0.9);
       justify-content: center;
       align-items: center;
-      -webkit-animation: fadeIn 0.3s;
       animation: fadeIn 0.3s;
     }
 
@@ -179,7 +183,6 @@
       max-width: 90%;
       max-height: 90%;
       object-fit: contain;
-      -webkit-animation: zoomIn 0.3s;
       animation: zoomIn 0.3s;
     }
 
@@ -198,24 +201,16 @@
     .close:focus {
       color: #bbb;
       text-decoration: none;
-      cursor: pointer;
     }
 
-    @-webkit-keyframes fadeIn {
-      from {opacity: 0}
-      to {opacity: 1}
-    }
     @keyframes fadeIn {
       from {opacity: 0}
       to {opacity: 1}
     }
-    @-webkit-keyframes zoomIn {
-      from {transform: scale(0.8)}
-      to {transform: scale(1)}
-    }
+
     @keyframes zoomIn {
       from {transform: scale(0.8)}
-      to {transform: 1)}
+      to {transform: scale(1)}
     }
   </style>
 </head>
@@ -223,7 +218,7 @@
 
   <nav>
     <a href="index.html">
-        <img src="logo-for-designbyyou.png" alt="DesignByYou Logo" class="logo" />
+      <img src="logo-for-designbyyou.png" alt="DesignByYou Logo" class="logo" />
     </a>
     <div class="nav-links">
       <a href="portfolio.html">Portfolio</a>
@@ -239,19 +234,19 @@
     <div class="gallery">
       <div class="placeholder">
         <img class="gallery-item" src="logo1.jpeg" data-fullsrc="logo1.jpeg" alt="Logotipo Minimalista 1">
-        </div>
+      </div>
       <div class="placeholder">
         <img class="gallery-item" src="logo2.jpeg" data-fullsrc="logo2.jpeg" alt="Logotipo Abstrato 2">
-        </div>
+      </div>
       <div class="placeholder">
         <img class="gallery-item" src="filipabee.jpeg" data-fullsrc="filipabee.jpeg" alt="Design para Filipabee">
-        </div>
+      </div>
       <div class="placeholder">
         <img class="gallery-item" src="mockup.jpeg" data-fullsrc="mockup.jpeg" alt="Mockup de Produto Digital">
-        </div>
+      </div>
       <div class="placeholder">
         <img class="gallery-item" src="mockup2.jpeg" data-fullsrc="mockup2.jpeg" alt="Mockup de Website Responsivo">
-        </div>
+      </div>
     </div>
 
     <a class="back-button" href="index.html">← Back to Home</a>
@@ -263,20 +258,22 @@
   </div>
 
   <script>
-    // --- JavaScript para o Modal (Lightbox) ---
     var modal = document.getElementById("myModal");
     var modalImg = document.getElementById("img01");
     var galleryItems = document.getElementsByClassName("gallery-item");
+
     for (var i = 0; i < galleryItems.length; i++) {
       galleryItems[i].onclick = function() {
         modal.style.display = "flex";
         modalImg.src = this.dataset.fullsrc || this.src;
       }
     }
+
     var span = document.getElementsByClassName("close")[0];
     span.onclick = function() {
       modal.style.display = "none";
     }
+
     modal.onclick = function(event) {
       if (event.target == modal) {
         modal.style.display = "none";
