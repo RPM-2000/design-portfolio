@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DesignByYou</title>
 
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 
   <style>
@@ -35,7 +34,7 @@
     }
 
     .logo {
-      height: 50px;
+      height: 80px; /* Logo aumentado para 80px */
     }
 
     .nav-links {
@@ -56,15 +55,19 @@
 
     /* Hero Section */
     .hero {
+      /* Adicionada margem superior para afastar do menu fixo */
+      margin-top: 120px; /* 80px (logo) + 20px + 20px (paddings) = 120px */
       height: 80vh;
-      background-image: url(hero-imagem-for-a-site-selling-servicce-design.jpg); /* Replace with your image file name */
+      /* Por favor, VERIFIQUE ESTE NOME DE FICHEIRO! */
+      background-image: url('hero-imagem-for-a-site-selling-servicce-design.jpg');
       background-size: cover;
       background-position: center;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 0 20px;
+      flex-direction: column; /* Organiza os elementos em coluna (título e botões) */
+      gap: 20px; /* Espaço entre o título e os botões */
     }
 
     .hero h1 {
@@ -76,9 +79,30 @@
       border-radius: 15px;
     }
 
+    /* Estilo para os botões dentro do hero */
+    .hero-buttons {
+      display: flex;
+      gap: 20px;
+    }
+    
+    .hero-buttons a {
+      text-decoration: none;
+      padding: 15px 30px;
+      border-radius: 30px;
+      background-color: #000;
+      color: #fff;
+      font-weight: 500;
+      transition: background 0.3s ease;
+    }
+
+    .hero-buttons a:hover {
+      background-color: #444;
+    }
+
     /* Footer */
     footer {
-      margin-top: 60px;
+      /* Remove a margem superior para colar ao conteúdo que o precede */
+      margin-top: 0;
       text-align: center;
       padding: 20px;
       font-size: 0.9rem;
@@ -88,7 +112,6 @@
 </head>
 <body>
 
-  <!-- Navigation Bar -->
   <nav>
     <img src="logo-for-designbyyou.png" alt="Logo" class="logo" />
     <div class="nav-links">
@@ -100,9 +123,12 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
   <section class="hero">
     <h1>Designs that speak your identity. Let your brand stand out.</h1>
+    <div class="hero-buttons">
+      <a href="services.html">Explore Services</a>
+      <a href="portfolio.html">View Portfolio</a>
+    </div>
   </section>
 
   <footer>
