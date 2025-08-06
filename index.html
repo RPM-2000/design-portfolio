@@ -20,7 +20,7 @@
       color: #333;
     }
 
-    /* Navbar */
+    /* Navbar (Mantém-se igual para ter a mesma altura que na imagem) */
     nav {
       display: flex;
       justify-content: space-between;
@@ -33,8 +33,10 @@
       z-index: 1000;
     }
 
+    /* Aumenta a altura do logo */
     .logo {
-      height: 80px; /* Logo aumentado para 80px */
+      height: 70px; /* Aumentado de 50px para 70px */
+      width: auto;
     }
 
     .nav-links {
@@ -55,19 +57,27 @@
 
     /* Hero Section */
     .hero {
-      /* Adicionada margem superior para afastar do menu fixo */
-      margin-top: 120px; /* 80px (logo) + 20px + 20px (paddings) = 120px */
-      height: 80vh;
-      /* Por favor, VERIFIQUE ESTE NOME DE FICHEIRO! */
+      /* Altura de 100vh para que a imagem preencha todo o ecrã verticalmente */
+      height: 100vh;
       background-image: url('hero-imagem-for-a-site-selling-servicce-design.jpg');
       background-size: cover;
       background-position: center;
+      position: relative; /* Essencial para posicionar os elementos internos (texto e botões) */
+      z-index: 1;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
-      flex-direction: column; /* Organiza os elementos em coluna (título e botões) */
-      gap: 20px; /* Espaço entre o título e os botões */
+      gap: 30px; /* Espaço entre o título e os botões */
     }
 
     .hero h1 {
@@ -79,7 +89,6 @@
       border-radius: 15px;
     }
 
-    /* Estilo para os botões dentro do hero */
     .hero-buttons {
       display: flex;
       gap: 20px;
@@ -101,7 +110,7 @@
 
     /* Footer */
     footer {
-      /* Remove a margem superior para colar ao conteúdo que o precede */
+      /* Sem margem superior, pois o hero já tem a altura total da página */
       margin-top: 0;
       text-align: center;
       padding: 20px;
@@ -124,10 +133,12 @@
   </nav>
 
   <section class="hero">
-    <h1>Designs that speak your identity. Let your brand stand out.</h1>
-    <div class="hero-buttons">
-      <a href="services.html">Explore Services</a>
-      <a href="portfolio.html">View Portfolio</a>
+    <div class="hero-overlay">
+      <h1>Designs that speak your identity. Let your brand stand out.</h1>
+      <div class="hero-buttons">
+        <a href="services.html">Explore Services</a>
+        <a href="portfolio.html">View Portfolio</a>
+      </div>
     </div>
   </section>
 
