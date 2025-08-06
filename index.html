@@ -53,15 +53,20 @@
       /* Cor das letras agora é preta */
       color: #000; 
       font-weight: 500;
-      transition: color 0.3s;
+      /* Transição para suavizar as alterações */
+      transition: all 0.3s ease-in-out;
       /* Sombra branca no texto para se destacar */
       text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
     }
 
     .nav-links a:hover {
-      /* Efeito de brilho branco ao passar o rato */
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
-      color: #000;
+      /* Efeito de brilho branco mais visível */
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+                   0 0 20px rgba(255, 255, 255, 0.8),
+                   0 0 30px rgba(255, 255, 255, 0.8);
+      /* Aumenta ligeiramente o tamanho do texto */
+      transform: scale(1.1);
+      color: #000; /* Mantém a cor preta */
     }
 
     /* Hero Section */
