@@ -16,8 +16,15 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #ffffff;
       color: #333;
+      /* Hero image agora é o fundo da página inteira */
+      background-image: url('hero-imagem-for-a-site-selling-servicce-design.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed; /* Para que a imagem não faça scroll */
+      min-height: 100vh; /* Garante que o body ocupa pelo menos toda a altura da janela */
+      position: relative; /* Essencial para o posicionamento do footer */
+      padding-top: 120px; /* Para o conteúdo principal não ficar por baixo do nav */
     }
 
     /* Navbar */
@@ -26,6 +33,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 20px 40px;
+      /* Fundo totalmente transparente */
       background-color: transparent; 
       position: fixed;
       top: 0;
@@ -62,16 +70,15 @@
       color: #000;
     }
 
-    /* Hero Section */
+    /* Hero Section (agora é apenas o conteúdo principal) */
     .hero {
-      height: 100vh;
-      background-image: url('hero-imagem-for-a-site-selling-servicce-design.jpg');
-      background-size: cover;
-      background-position: center;
+      height: calc(100vh - 120px); /* Ocupa o espaço restante na tela */
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
+      /* Fundo removido, já que agora é o do body */
+      background: none; 
     }
 
     .hero h1 {
@@ -85,13 +92,16 @@
 
     /* Footer */
     footer {
-      /* Fundo totalmente transparente */
-      background-color: transparent; 
-      margin-top: 0;
       text-align: center;
       padding: 20px;
       font-size: 0.9rem;
       color: #999;
+      /* Rodapé no fundo da página, por cima da imagem de fundo */
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: transparent; /* Certifica-se de que é transparente */
     }
   </style>
 </head>
