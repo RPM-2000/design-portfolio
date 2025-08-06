@@ -26,9 +26,8 @@
       justify-content: space-between;
       align-items: center;
       padding: 20px 40px;
-      /* Fundo branco semi-transparente para as letras pretas */
-      background-color: rgba(255, 255, 255, 0.8); 
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Sombra para profundidade */
+      /* Fundo totalmente transparente */
+      background-color: transparent; 
       position: fixed;
       top: 0;
       left: 0;
@@ -40,7 +39,8 @@
     .logo {
       height: 140px;
       width: auto;
-      /* Removemos a sombra do logo, que já não é necessária */
+      /* Sombra no logo para se destacar do fundo */
+      filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
     }
 
     .nav-links {
@@ -54,7 +54,8 @@
       color: #000; 
       font-weight: 500;
       transition: color 0.3s;
-      /* Removemos a text-shadow, que já não é necessária */
+      /* Sombra branca no texto para se destacar */
+      text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
     }
 
     .nav-links a:hover {
