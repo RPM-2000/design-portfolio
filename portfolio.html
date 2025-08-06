@@ -14,52 +14,51 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #ffffff; /* Fundo branco para a galeria, como deve ser */
+      background-color: #ffffff;
       color: #333;
       padding: 0;
+      position: relative;
     }
 
-    /* Header - Agora com a mesma barra de navegação do index */
     nav {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
       height: 120px;
-      background-color: transparent; /* Fundo transparente */
+      background-color: transparent;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 20px 40px;
       z-index: 1000;
     }
-    
+    
     .logo {
       height: 140px;
       width: auto;
-      /* A sombra branca é essencial para o logo ser visível no fundo transparente */
-      filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+      filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
       transition: transform 0.3s ease;
     }
-    
+
     .logo:hover {
       transform: scale(1.05);
     }
-    
+    
     .nav-links {
       display: flex;
       gap: 30px;
     }
-    
+    
     .nav-links a {
       text-decoration: none;
       color: #000;
       font-weight: 500;
       transition: all 0.3s ease-in-out;
-      /* Brilho no texto dos links, como no index.html */
+      /* Brilho nos links, como no index.html */
       text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
     }
-    
+    
     .nav-links a:hover {
       /* Brilho no hover, como no index.html */
       text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
@@ -69,29 +68,18 @@
       color: #000;
     }
 
-    /* Título "My Portfolio" */
-    .page-title-container {
-      position: absolute; /* Para o título ficar por cima do conteúdo */
-      top: 120px; /* Abaixo da nav bar */
-      left: 0;
-      right: 0;
-      z-index: 999;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px 0;
-      background-color: transparent;
-    }
-    
+    /* Título da página - Corrigido para não ter posição absoluta */
     .page-title {
+      text-align: center;
       font-size: 2.5rem;
       font-weight: 700;
-      color: #000; /* Cor do título preta para ser visível no fundo branco */
-      text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8); /* Sombra branca para o destaque */
+      color: #333;
+      padding: 20px 0;
+      margin-top: 120px; /* Para dar espaço ao nav bar fixo */
     }
-
+    
     main {
-      margin-top: 200px; /* Para dar espaço à nav e ao título */
+      /* O margin-top original já não é necessário, pois o título já o faz */
       padding: 20px 40px;
       text-align: center;
     }
@@ -232,7 +220,7 @@
 
   <nav>
     <a href="index.html">
-      <img src="logo-for-designbyyou.png" alt="DesignByYou Logo" class="logo" />
+        <img src="logo-for-designbyyou.png" alt="DesignByYou Logo" class="logo" />
     </a>
     <div class="nav-links">
       <a href="portfolio.html">Portfolio</a>
@@ -242,27 +230,25 @@
     </div>
   </nav>
 
-  <div class="page-title-container">
-    <h1 class="page-title">My Portfolio</h1>
-  </div>
+  <h1 class="page-title">My Portfolio</h1>
 
   <main>
     <div class="gallery">
       <div class="placeholder">
         <img class="gallery-item" src="logo1.jpeg" data-fullsrc="logo1.jpeg" alt="Logotipo Minimalista 1">
-      </div>
+        </div>
       <div class="placeholder">
         <img class="gallery-item" src="logo2.jpeg" data-fullsrc="logo2.jpeg" alt="Logotipo Abstrato 2">
-      </div>
+        </div>
       <div class="placeholder">
         <img class="gallery-item" src="filipabee.jpeg" data-fullsrc="filipabee.jpeg" alt="Design para Filipabee">
-      </div>
+        </div>
       <div class="placeholder">
         <img class="gallery-item" src="mockup.jpeg" data-fullsrc="mockup.jpeg" alt="Mockup de Produto Digital">
-      </div>
+        </div>
       <div class="placeholder">
         <img class="gallery-item" src="mockup2.jpeg" data-fullsrc="mockup2.jpeg" alt="Mockup de Website Responsivo">
-      </div>
+        </div>
     </div>
 
     <a class="back-button" href="index.html">← Back to Home</a>
