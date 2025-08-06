@@ -28,18 +28,16 @@
       padding: 20px 40px;
       background-color: #fff;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-      position: fixed; /* Usar 'fixed' é mais seguro para este layout */
+      position: fixed;
       top: 0;
       left: 0;
       right: 0;
       z-index: 1000;
-      /* Ajustamos a altura da nav para combinar com a do portfólio */
-      height: 120px; 
+      height: 120px;
     }
 
     .logo {
-      /* Ajustamos a altura do logo para combinar com a do portfólio */
-      height: 140px; 
+      height: 140px;
       width: auto;
     }
 
@@ -61,18 +59,17 @@
 
     /* Hero Section */
     .hero {
-      /* Ajustamos o padding para dar espaço ao header fixo */
-      padding-top: 120px;
-      height: 80vh;
+      /* Ajustamos a altura para ocupar exatamente o espaço restante na tela */
+      height: calc(100vh - 120px);
+      /* Adicionamos a margem superior para compensar o menu fixo */
+      margin-top: 120px;
       background-image: url('hero-imagem-for-a-site-selling-servicce-design.jpg');
       background-size: cover;
       background-position: center;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
-      gap: 30px;
     }
 
     .hero h1 {
@@ -83,28 +80,10 @@
       padding: 20px 30px;
       border-radius: 15px;
     }
-    
-    .hero-buttons {
-        display: flex;
-        gap: 20px;
-    }
-    
-    .hero-buttons a {
-        text-decoration: none;
-        padding: 15px 30px;
-        border-radius: 30px;
-        background-color: #000;
-        color: #fff;
-        font-weight: 500;
-        transition: background 0.3s ease;
-    }
-
-    .hero-buttons a:hover {
-        background-color: #444;
-    }
 
     /* Footer */
     footer {
+      /* Remove a margem superior para que o footer se cole ao hero */
       margin-top: 0;
       text-align: center;
       padding: 20px;
@@ -130,10 +109,6 @@
 
   <section class="hero">
     <h1>Designs that speak your identity. Let your brand stand out.</h1>
-    <div class="hero-buttons">
-      <a href="services.html">Explore Services</a>
-      <a href="portfolio.html">View Portfolio</a>
-    </div>
   </section>
 
   <footer>
