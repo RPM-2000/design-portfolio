@@ -6,63 +6,83 @@
   <title>Portfolio - DesignByYou</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: #fff;
-      color: #333;
       padding: 0;
+      box-sizing: border-box;
     }
 
-    header {
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffffff; /* Fundo branco para a galeria */
+      color: #333;
+      padding: 0;
+      position: relative; /* Necessário para posicionar o título por cima */
+    }
+
+    /* Navbar - agora com a barra de navegação */
+    nav {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
-      height: 120px; /* Altura do cabeçalho */
-      background-color: #fff;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      height: 120px;
+      background-color: transparent; /* Fundo totalmente transparente */
       display: flex;
-      align-items: center; /* Alinha verticalmente os itens no centro */
-      padding: 0 40px;
-      gap: 30px;
-      z-index: 1000;
-      position: relative; /* Essencial para o posicionamento absoluto do h1 */
-    }
-
-    header a {
-      display: flex;
-      padding: 0;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      width: auto;
+      padding: 20px 40px;
+      z-index: 1000;
     }
-
-    header img {
-      height: 140px; /* Logo maior, transborda o header */
+    
+    .logo {
+      height: 140px;
       width: auto;
-      cursor: pointer;
+      filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2)); /* Sombra para o logo se destacar */
       transition: transform 0.3s ease;
-      display: block;
     }
 
-    header img:hover {
+    .logo:hover {
       transform: scale(1.05);
     }
-
-    header h1 {
-      font-size: 1.8rem; /* Tamanho do título "My Portfolio" */
-      margin: 0;
-      font-weight: 700;
-      user-select: none;
-      white-space: nowrap;
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%); /* Centra o título horizontalmente */
+    
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      color: #000;
+      font-weight: 500;
+      transition: all 0.3s ease-in-out;
+      text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+    }
+    
+    .nav-links a:hover {
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+                   0 0 20px rgba(255, 255, 255, 0.8),
+                   0 0 30px rgba(255, 255, 255, 0.8);
+      transform: scale(1.1);
+      color: #000;
     }
 
+    /* Título da página */
+    .page-title {
+      position: absolute; /* Posição absoluta para o título ficar por cima do conteúdo */
+      top: 120px; /* Abaixo do nav */
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #333;
+      z-index: 999; /* Fica por baixo do nav, mas por cima do main */
+      padding: 20px 0;
+    }
+    
     main {
-      margin-top: 140px; /* Espaço para o header fixo */
+      margin-top: 200px; /* Aumentamos o margin para dar espaço ao nav e ao título */
       padding: 20px 40px;
       text-align: center;
     }
@@ -85,17 +105,17 @@
       color: #aaa;
       font-style: italic;
       border: 1px dashed #ccc;
-      overflow: hidden; /* Garante que a imagem fica dentro dos limites visuais */
-      position: relative; /* Para posicionar legendas sobre a imagem */
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra para o cartão do projeto */
-      border-radius: 8px; /* Cantos arredondados */
-      cursor: pointer; /* Adiciona cursor de ponteiro para indicar que é clicável */
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      cursor: pointer;
     }
 
     .placeholder img {
       width: 100%;
       height: 100%;
-      object-fit: cover; /* Faz com que a imagem cubra todo o espaço, cortando se necessário */
+      object-fit: cover;
       display: block;
       transition: transform 0.3s ease;
     }
@@ -104,24 +124,22 @@
       transform: scale(1.05);
     }
 
-    /* O estilo para a legenda (o parágrafo <p>) já não é necessário, mas mantê-lo não causará problemas */
-    /* se não houver tags <p> dentro dos .placeholder para o afetar. */
     .placeholder p {
       position: absolute;
       bottom: 0;
       width: 100%;
-      background-color: rgba(0, 0, 0, 0.7); /* Fundo preto semi-transparente */
+      background-color: rgba(0, 0, 0, 0.7);
       color: #fff;
       padding: 10px 0;
       margin: 0;
       font-size: 0.9em;
       text-align: center;
-      transform: translateY(100%); /* Esconde a legenda inicialmente */
+      transform: translateY(100%);
       transition: transform 0.3s ease;
     }
 
     .placeholder:hover p {
-      transform: translateY(0); /* Mostra a legenda ao passar o mouse */
+      transform: translateY(0);
     }
 
     .back-button {
@@ -140,17 +158,17 @@
 
     /* --- Estilos para o Modal (Lightbox) --- */
     .modal {
-      display: none; /* Escondido por padrão */
-      position: fixed; /* Fixado para cobrir toda a tela */
-      z-index: 2000; /* Acima de tudo o resto */
+      display: none;
+      position: fixed;
+      z-index: 2000;
       left: 0;
       top: 0;
       width: 100%;
       height: 100%;
-      overflow: auto; /* Permite scroll se a imagem for muito grande */
-      background-color: rgba(0, 0, 0, 0.9); /* Fundo escuro semi-transparente */
-      justify-content: center; /* Centra a imagem horizontalmente */
-      align-items: center; /* Centra a imagem verticalmente */
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
       -webkit-animation: fadeIn 0.3s;
       animation: fadeIn 0.3s;
     }
@@ -158,14 +176,13 @@
     .modal-content {
       margin: auto;
       display: block;
-      max-width: 90%; /* Limita o tamanho da imagem */
-      max-height: 90%; /* Limita o tamanho da imagem */
-      object-fit: contain; /* Garante que a imagem se ajusta sem cortar */
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
       -webkit-animation: zoomIn 0.3s;
       animation: zoomIn 0.3s;
     }
 
-    /* Botão de fechar (X) */
     .close {
       position: absolute;
       top: 15px;
@@ -184,7 +201,6 @@
       cursor: pointer;
     }
 
-    /* Animações (opcional, para um efeito mais suave) */
     @-webkit-keyframes fadeIn {
       from {opacity: 0}
       to {opacity: 1}
@@ -201,17 +217,23 @@
       from {transform: scale(0.8)}
       to {transform: 1)}
     }
-
   </style>
 </head>
 <body>
 
-  <header>
+  <nav>
     <a href="index.html">
-      <img src="logo-for-designbyyou.png" alt="DesignByYou Logo" />
+        <img src="logo-for-designbyyou.png" alt="DesignByYou Logo" class="logo" />
     </a>
-    <h1>My Portfolio</h1>
-  </header>
+    <div class="nav-links">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <h1 class="page-title">My Portfolio</h1>
 
   <main>
     <div class="gallery">
@@ -242,36 +264,21 @@
 
   <script>
     // --- JavaScript para o Modal (Lightbox) ---
-
-    // Obtém o modal
     var modal = document.getElementById("myModal");
-
-    // Obtém a imagem dentro do modal
     var modalImg = document.getElementById("img01");
-
-    // Obtém todas as imagens da galeria que queremos que abram no modal
     var galleryItems = document.getElementsByClassName("gallery-item");
-
-    // Itera sobre cada imagem da galeria e adiciona um evento de clique
     for (var i = 0; i < galleryItems.length; i++) {
       galleryItems[i].onclick = function() {
-        modal.style.display = "flex"; // Mostra o modal (usando flex para centrar)
-        // Pega o caminho da imagem do atributo 'data-fullsrc', ou usa o 'src' se 'data-fullsrc' não estiver definido
+        modal.style.display = "flex";
         modalImg.src = this.dataset.fullsrc || this.src;
       }
     }
-
-    // Obtém o elemento <span> que fecha o modal (o "X")
     var span = document.getElementsByClassName("close")[0];
-
-    // Quando o utilizador clica no <span> (x), fecha o modal
     span.onclick = function() {
       modal.style.display = "none";
     }
-
-    // Quando o utilizador clica fora da imagem (mas dentro do fundo escuro do modal), fecha o modal
     modal.onclick = function(event) {
-      if (event.target == modal) { // Se o clique foi diretamente no fundo escuro do modal
+      if (event.target == modal) {
         modal.style.display = "none";
       }
     }
