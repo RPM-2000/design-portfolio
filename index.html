@@ -26,14 +26,18 @@
       justify-content: space-between;
       align-items: center;
       padding: 20px 40px;
-      background-color: #fff;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      /* Fundo transparente para ver a hero image por baixo */
+      background-color: transparent; 
+      /* Removi a box-shadow para um visual mais limpo, mas pode adicioná-la de volta se quiser */
+      /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); */
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
       z-index: 1000;
       height: 120px;
+      /* Ajustamos a cor do texto para ser visível na hero image */
+      color: #fff;
     }
 
     .logo {
@@ -48,21 +52,21 @@
 
     .nav-links a {
       text-decoration: none;
-      color: #333;
+      /* A cor dos links é agora branca para se destacar no fundo escuro da hero image */
+      color: #fff;
       font-weight: 500;
       transition: color 0.3s;
     }
 
     .nav-links a:hover {
-      color: #000;
+      /* Cor de hover mais escura, ou outra cor que combine */
+      color: #ccc; 
     }
 
     /* Hero Section */
     .hero {
-      /* Ajustamos a altura para ocupar exatamente o espaço restante na tela */
-      height: calc(100vh - 120px);
-      /* Adicionamos a margem superior para compensar o menu fixo */
-      margin-top: 120px;
+      /* Com a nav transparente, não precisamos da margem superior */
+      height: 100vh;
       background-image: url('hero-imagem-for-a-site-selling-servicce-design.jpg');
       background-size: cover;
       background-position: center;
@@ -83,7 +87,6 @@
 
     /* Footer */
     footer {
-      /* Remove a margem superior para que o footer se cole ao hero */
       margin-top: 0;
       text-align: center;
       padding: 20px;
