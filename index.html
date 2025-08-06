@@ -26,6 +26,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 20px 40px;
+      /* Fundo totalmente transparente */
       background-color: transparent; 
       position: fixed;
       top: 0;
@@ -38,6 +39,8 @@
     .logo {
       height: 140px;
       width: auto;
+      /* Sombra no logo para se destacar do fundo */
+      filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
     }
 
     .nav-links {
@@ -47,10 +50,11 @@
 
     .nav-links a {
       text-decoration: none;
-      /* Corrigido: Cor dos links agora é branca */
-      color: #fff; 
+      color: #fff; /* Cor do texto branca */
       font-weight: 500;
       transition: color 0.3s;
+      /* Sombra no texto para se destacar do fundo */
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
     }
 
     .nav-links a:hover {
@@ -109,10 +113,6 @@
 
   <footer>
     © 2025 DesignByYou — All rights reserved.
-  </footer>
-
-</body>
-</html>
   </footer>
 
 </body>
