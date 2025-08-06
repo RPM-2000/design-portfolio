@@ -33,7 +33,7 @@
     }
 
     header img {
-      height: 100%; /* Corrigido para ocupar 100% da altura do header */
+      height: 100%; /* Ocupa 100% da altura do header */
       width: auto;
       cursor: pointer;
       transition: transform 0.3s ease;
@@ -61,15 +61,16 @@
     }
 
     .hero {
-      /* Corrigido para ocupar 100% da altura da tela, menos a altura do header */
-      height: calc(100vh - 120px);
+      /* Volta para o valor original para o hero não ocupar todo o ecrã */
+      height: 70vh; 
+      /* Adicionamos a margem de 120px para compensar a altura do header */
+      margin-top: 120px; 
       background: url('hero-image.jpg') center center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       padding: 0 20px;
-      margin-top: 120px; /* Adicionado para empurrar o hero para baixo do header fixo */
     }
 
     .hero h1 {
@@ -85,9 +86,8 @@
       justify-content: center;
       gap: 20px;
       flex-wrap: wrap;
-      /* Removida a margem superior para que os botões comecem logo após o hero */
-      margin-top: 0;
-      padding: 40px 0; /* Adicionado padding para dar espaço aos botões */
+      /* Ajusta a margem para 20px para não ser excessiva */
+      margin-top: 20px;
     }
 
     .buttons a {
@@ -109,7 +109,8 @@
       padding: 40px 20px;
       font-size: 0.9rem;
       color: #999;
-      margin-top: 0; /* Removida a margem superior para colar no elemento anterior */
+      /* Ajusta a margem para que não haja um grande espaço antes do footer */
+      margin-top: 40px;
     }
   </style>
 </head>
