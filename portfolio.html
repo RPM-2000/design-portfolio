@@ -14,42 +14,34 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #ffffff; /* Fundo branco para a galeria, como queria */
+      background-color: #ffffff; /* Fundo branco para a galeria */
       color: #333;
       padding: 0;
     }
 
     header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 120px;
-      /* Fundo semi-transparente branco para um efeito sutil */
-      background-color: rgba(255, 255, 255, 0.8);
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      height: 250px; /* Altura do cabeçalho */
       display: flex;
       align-items: center;
-      padding: 0 40px;
-      z-index: 1000;
-      position: relative;
+      justify-content: center;
+      flex-direction: column; /* Coloca os itens em coluna */
+      padding: 20px 40px;
+      background-image: url('hero-imagem-for-a-site-selling-servicce-design.jpg'); /* Fundo da hero image apenas no topo */
+      background-size: cover;
+      background-position: center;
+      color: #fff; /* Letras brancas para o contraste */
     }
 
     header a {
-      display: flex;
-      padding: 0;
-      align-items: center;
-      justify-content: center;
-      width: auto;
+      display: block;
     }
-
+    
     header img {
       height: 140px;
       width: auto;
       cursor: pointer;
       transition: transform 0.3s ease;
       display: block;
-      /* A sombra branca do logo foi removida porque o fundo já não é escuro */
     }
 
     header img:hover {
@@ -57,20 +49,13 @@
     }
 
     header h1 {
-      font-size: 1.8rem;
-      margin: 0;
+      font-size: 2.2rem;
+      margin-top: 10px;
       font-weight: 700;
-      user-select: none;
-      white-space: nowrap;
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      color: #000; /* Cor do título preta */
-      /* A sombra do texto foi removida porque o fundo já não é escuro */
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra para o texto se destacar */
     }
 
     main {
-      margin-top: 140px;
       padding: 20px 40px;
       text-align: center;
     }
@@ -165,121 +150,3 @@
       margin: auto;
       display: block;
       max-width: 90%;
-      max-height: 90%;
-      object-fit: contain;
-      -webkit-animation: zoomIn 0.3s;
-      animation: zoomIn 0.3s;
-    }
-
-    .close {
-      position: absolute;
-      top: 15px;
-      right: 35px;
-      color: #f1f1f1;
-      font-size: 40px;
-      font-weight: bold;
-      transition: 0.3s;
-      cursor: pointer;
-    }
-
-    .close:hover,
-    .close:focus {
-      color: #bbb;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    @-webkit-keyframes fadeIn {
-      from {opacity: 0}
-      to {opacity: 1}
-    }
-    @keyframes fadeIn {
-      from {opacity: 0}
-      to {opacity: 1}
-    }
-    @-webkit-keyframes zoomIn {
-      from {transform: scale(0.8)}
-      to {transform: scale(1)}
-    }
-    @keyframes zoomIn {
-      from {transform: scale(0.8)}
-      to {transform: 1)}
-    }
-
-  </style>
-</head>
-<body>
-
-  <header>
-    <a href="index.html">
-      <img src="logo-for-designbyyou.png" alt="DesignByYou Logo" />
-    </a>
-    <h1>My Portfolio</h1>
-  </header>
-
-  <main>
-    <div class="gallery">
-      <div class="placeholder">
-        <img class="gallery-item" src="logo1.jpeg" data-fullsrc="logo1.jpeg" alt="Logotipo Minimalista 1">
-        </div>
-      <div class="placeholder">
-        <img class="gallery-item" src="logo2.jpeg" data-fullsrc="logo2.jpeg" alt="Logotipo Abstrato 2">
-        </div>
-      <div class="placeholder">
-        <img class="gallery-item" src="filipabee.jpeg" data-fullsrc="filipabee.jpeg" alt="Design para Filipabee">
-        </div>
-      <div class="placeholder">
-        <img class="gallery-item" src="mockup.jpeg" data-fullsrc="mockup.jpeg" alt="Mockup de Produto Digital">
-        </div>
-      <div class="placeholder">
-        <img class="gallery-item" src="mockup2.jpeg" data-fullsrc="mockup2.jpeg" alt="Mockup de Website Responsivo">
-        </div>
-    </div>
-
-    <a class="back-button" href="index.html">← Back to Home</a>
-  </main>
-
-  <div id="myModal" class="modal">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="img01">
-  </div>
-
-  <script>
-    // --- JavaScript para o Modal (Lightbox) ---
-
-    // Obtém o modal
-    var modal = document.getElementById("myModal");
-
-    // Obtém a imagem dentro do modal
-    var modalImg = document.getElementById("img01");
-
-    // Obtém todas as imagens da galeria que queremos que abram no modal
-    var galleryItems = document.getElementsByClassName("gallery-item");
-
-    // Itera sobre cada imagem da galeria e adiciona um evento de clique
-    for (var i = 0; i < galleryItems.length; i++) {
-      galleryItems[i].onclick = function() {
-        modal.style.display = "flex"; // Mostra o modal (usando flex para centrar)
-        // Pega o caminho da imagem do atributo 'data-fullsrc', ou usa o 'src' se 'data-fullsrc' não estiver definido
-        modalImg.src = this.dataset.fullsrc || this.src;
-      }
-    }
-
-    // Obtém o elemento <span> que fecha o modal (o "X")
-    var span = document.getElementsByClassName("close")[0];
-
-    // Quando o utilizador clica no <span> (x), fecha o modal
-    span.onclick = function() {
-      modal.style.display = "none";
-    }
-
-    // Quando o utilizador clica fora da imagem (mas dentro do fundo escuro do modal), fecha o modal
-    modal.onclick = function(event) {
-      if (event.target == modal) { // Se o clique foi diretamente no fundo escuro do modal
-        modal.style.display = "none";
-      }
-    }
-  </script>
-
-</body>
-</html>
